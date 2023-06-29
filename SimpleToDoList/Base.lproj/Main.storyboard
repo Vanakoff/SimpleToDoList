@@ -69,14 +69,58 @@
                     <view key="view" contentMode="scaleToFill" id="Dj5-8j-gHF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aZz-fr-fUx">
+                                <rect key="frame" x="16" y="50" width="382" height="158"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tu-ht-fBj">
+                                        <rect key="frame" x="134" y="0.0" width="114.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNG-nS-p5N">
+                                        <rect key="frame" x="0.0" y="40" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWY-bk-OBP">
+                                        <rect key="frame" x="103.5" y="84" width="175" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-gZ-SLJ">
+                                        <rect key="frame" x="0.0" y="124" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fWL-gZ-SLJ" secondAttribute="trailing" id="8YP-hL-Cv6"/>
+                                    <constraint firstItem="fWL-gZ-SLJ" firstAttribute="leading" secondItem="aZz-fr-fUx" secondAttribute="leading" id="LkX-jg-fdT"/>
+                                    <constraint firstAttribute="trailing" secondItem="TNG-nS-p5N" secondAttribute="trailing" id="RC6-kB-01D"/>
+                                    <constraint firstItem="TNG-nS-p5N" firstAttribute="leading" secondItem="aZz-fr-fUx" secondAttribute="leading" id="pac-zy-bEW"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lM2-q2-PhV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="lM2-q2-PhV" firstAttribute="trailing" secondItem="aZz-fr-fUx" secondAttribute="trailing" constant="16" id="XAx-1e-aaq"/>
+                            <constraint firstItem="aZz-fr-fUx" firstAttribute="leading" secondItem="lM2-q2-PhV" secondAttribute="leading" constant="16" id="cqg-ny-7sd"/>
+                            <constraint firstItem="aZz-fr-fUx" firstAttribute="top" secondItem="lM2-q2-PhV" secondAttribute="top" constant="50" id="t5t-JV-A71"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k0t-0Z-PjK"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="fWL-gZ-SLJ" id="g3P-Eq-gEU"/>
+                        <outlet property="nameTextField" destination="TNG-nS-p5N" id="xat-QP-Htu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QE-j0-QUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="488"/>
+            <point key="canvasLocation" x="1605.7971014492755" y="487.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BBz-yC-MVT">
@@ -100,6 +144,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

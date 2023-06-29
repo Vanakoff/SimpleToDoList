@@ -8,11 +8,17 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        descriptionTextField.addConstraint(descriptionTextField.heightAnchor.constraint(equalToConstant: 200))
+      
     }
     
 
