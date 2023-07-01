@@ -12,14 +12,21 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
-    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        descriptionTextField.addConstraint(descriptionTextField.heightAnchor.constraint(equalToConstant: 200))
-      
     }
+
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
     
 
     /*
