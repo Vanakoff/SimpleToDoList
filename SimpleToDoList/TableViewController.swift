@@ -9,7 +9,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let tasks = ["Task 1", "Task 2", "Task 3", "Task 4"]
+    var tasks = ["Task 1", "Task 2", "Task 3", "Task 4"]
     let content = ["abc", "def", "ghi", "klm"]
 
     override func viewDidLoad() {
@@ -36,7 +36,17 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-
+    //MARK: - Add New Task
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let settingsVC = segue.source as? SettingsViewController else { return }
+        
+        let newTaskName = settingsVC.nameTextField.text ?? "new task"
+        tasks.append(newTaskName)
+        tableView.reloadData()
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

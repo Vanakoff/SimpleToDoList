@@ -82,6 +82,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="TEe-uz-1gq">
                                             <connections>
                                                 <action selector="doneButtonPressed:" destination="lWI-vP-btb" id="LN2-sl-aBi"/>
+                                                <segue destination="Byq-QF-b9E" kind="unwind" unwindAction="unwindFor:" id="A5z-es-5QY"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -144,6 +145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QE-j0-QUV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Byq-QF-b9E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1605.7971014492755" y="487.5"/>
         </scene>
