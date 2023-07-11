@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
+
+    var taskArray = [Task]()
     
-    var tasks = ["Task 1", "Task 2", "Task 3", "Task 4"]
-    let content = ["abc", "def", "ghi", "klm"]
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        loadTasks()
     }
 
     // MARK: - Table view data source
@@ -24,15 +28,15 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.count
+        taskArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = tasks[indexPath.row]
-
+        cell.textLabel?.text = taskArray[indexPath.row].name
+        
         return cell
     }
     
@@ -41,10 +45,50 @@ class TableViewController: UITableViewController {
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         guard let settingsVC = segue.source as? SettingsViewController else { return }
         
-        let newTaskName = settingsVC.nameTextField.text ?? "new task"
-        tasks.append(newTaskName)
-        tableView.reloadData()
+        let newTask = Task(context: self.context)
+        newTask.name = settingsVC.nameTextField.text
         
+        if newTask.name == "" {
+            newTask.name = "new task"
+        }
+        
+        newTask.taskDescription = settingsVC.descriptionTextView.text
+        
+        if newTask.taskDescription == "" {
+            newTask.taskDescription = "no description"
+        }
+        
+        newTask.done = false
+        
+        taskArray.append(newTask)
+        
+        saveTask()
+        
+        tableView.reloadData()
+    }
+    
+    
+    func loadTasks() {
+        
+        let request : NSFetchRequest<Task> = Task.fetchRequest()
+        
+        do {
+            taskArray = try context.fetch(request)
+        } catch {
+            print("Cannot fetch Tasks Data, \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    
+    
+    func saveTask() {
+        do {
+            try context.save()
+        } catch {
+            print("Cannot save a New Task, \(error)")
+        }
+        tableView.reloadData()
     }
     
     /*
