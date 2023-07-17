@@ -24,9 +24,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="FAL-bH-Kxn" kind="show" id="xai-Lp-5hZ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -41,6 +38,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="FAL-bH-Kxn" kind="show" id="cYx-pR-jj6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2i7-cd-0t3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,18 +49,44 @@
         <!--Details View Controller-->
         <scene sceneID="hSk-ht-Xae">
             <objects>
-                <viewController id="FAL-bH-Kxn" customClass="DetailsViewController" customModule="SimpleToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="FAL-bH-Kxn" customClass="DetailsViewController" customModule="SimpleToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WDn-AD-84A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskNameLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5M-RA-9ZD">
+                                <rect key="frame" x="10" y="160" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TaskDescriptionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH8-TI-Dh9">
+                                <rect key="frame" x="10" y="200" width="394" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IMi-J4-kRy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IMi-J4-kRy" firstAttribute="trailing" secondItem="w5M-RA-9ZD" secondAttribute="trailing" constant="10" id="EIl-kG-ehi"/>
+                            <constraint firstItem="w5M-RA-9ZD" firstAttribute="top" secondItem="IMi-J4-kRy" secondAttribute="top" constant="20" id="QTj-5w-HSq"/>
+                            <constraint firstItem="EH8-TI-Dh9" firstAttribute="top" secondItem="w5M-RA-9ZD" secondAttribute="bottom" constant="10" id="RaM-QE-Ybf"/>
+                            <constraint firstItem="IMi-J4-kRy" firstAttribute="trailing" secondItem="EH8-TI-Dh9" secondAttribute="trailing" constant="10" id="WZ9-6H-s5l"/>
+                            <constraint firstItem="w5M-RA-9ZD" firstAttribute="leading" secondItem="IMi-J4-kRy" secondAttribute="leading" constant="10" id="qLw-n5-rYB"/>
+                            <constraint firstItem="EH8-TI-Dh9" firstAttribute="leading" secondItem="IMi-J4-kRy" secondAttribute="leading" constant="10" id="qRo-1A-vAR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jgo-Pa-QTj"/>
+                    <connections>
+                        <outlet property="taskDescriptionLabel" destination="EH8-TI-Dh9" id="Z8T-MU-3M1"/>
+                        <outlet property="taskNameLabel" destination="w5M-RA-9ZD" id="QUj-kl-8GL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcQ-QG-7No" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="-194"/>
+            <point key="canvasLocation" x="1605.7971014492755" y="-194.19642857142856"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="YGC-B0-aMm">

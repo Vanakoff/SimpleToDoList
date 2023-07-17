@@ -7,23 +7,24 @@
 
 import UIKit
 
+
 class DetailsViewController: UIViewController {
 
+    
+    @IBOutlet weak var taskNameLabel: UILabel!
+    @IBOutlet weak var taskDescriptionLabel: UILabel!
+    
+    var taskName: String?
+    var taskDescription: String?
+    var done: Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        taskNameLabel.text = taskName
+        taskDescriptionLabel.text = taskDescription
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        }
+   
 
 }

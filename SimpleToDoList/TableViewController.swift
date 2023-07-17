@@ -17,15 +17,15 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         loadTasks()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         taskArray.count
@@ -38,6 +38,18 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = taskArray[indexPath.row].name
         
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        if let detailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+       
+            detailsVC.taskName = taskArray[indexPath.row].name
+            detailsVC.taskDescription = taskArray[indexPath.row].description
+       
+            navigationController?.pushViewController(detailsVC, animated: true)
+        }
     }
     
     //MARK: - Add New Task
