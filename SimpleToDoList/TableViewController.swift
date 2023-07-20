@@ -46,9 +46,12 @@ class TableViewController: UITableViewController {
         if let detailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
        
             detailsVC.taskName = taskArray[indexPath.row].name
-            detailsVC.taskDescription = taskArray[indexPath.row].description
+            detailsVC.taskDescription = taskArray[indexPath.row].taskDescription
+    
        
             navigationController?.pushViewController(detailsVC, animated: true)
+            
+            print(String("\(detailsVC.taskDescription = taskArray[indexPath.row].taskDescription)"))
         }
     }
     
@@ -70,7 +73,6 @@ class TableViewController: UITableViewController {
             newTask.taskDescription = "no description"
         }
         
-        newTask.done = false
         
         taskArray.append(newTask)
         
