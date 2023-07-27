@@ -9,22 +9,20 @@ import UIKit
 
 
 class DetailsViewController: UIViewController {
-
     
     @IBOutlet weak var taskNameLabel: UILabel!
     @IBOutlet weak var taskDescriptionLabel: UILabel!
     
     var taskName: String?
     var taskDescription: String?
-    var done: Bool?
+    // var done: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         taskNameLabel.text = taskName
         taskDescriptionLabel.text = taskDescription
+        
+    }
     
-        }
-   
-
 }
