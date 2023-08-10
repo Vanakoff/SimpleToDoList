@@ -16,6 +16,8 @@
 		68903AED2A42574E0083F2DE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68903AEC2A42574E0083F2DE /* TableViewController.swift */; };
 		68903AEF2A4257A00083F2DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68903AEE2A4257A00083F2DE /* SettingsViewController.swift */; };
 		68903AF12A4257DC0083F2DE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68903AF02A4257DC0083F2DE /* DetailsViewController.swift */; };
+		68EA37CA2A8597A10069D223 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EA37C82A8597A10069D223 /* TaskTableViewCell.swift */; };
+		68EA37CB2A8597A10069D223 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68EA37C92A8597A10069D223 /* TaskTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		68903AEC2A42574E0083F2DE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		68903AEE2A4257A00083F2DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		68903AF02A4257DC0083F2DE /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		68EA37C82A8597A10069D223 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		68EA37C92A8597A10069D223 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				68903AE32A4256910083F2DE /* LaunchScreen.storyboard */,
 				68903AE62A4256910083F2DE /* Info.plist */,
 				68903ADE2A4256860083F2DE /* SimpleToDoList.xcdatamodeld */,
+				68EA37C82A8597A10069D223 /* TaskTableViewCell.swift */,
+				68EA37C92A8597A10069D223 /* TaskTableViewCell.xib */,
 			);
 			path = SimpleToDoList;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EA37CB2A8597A10069D223 /* TaskTableViewCell.xib in Resources */,
 				68903AE52A4256910083F2DE /* LaunchScreen.storyboard in Resources */,
 				68903AE22A4256910083F2DE /* Assets.xcassets in Resources */,
 				68903ADD2A4256860083F2DE /* Main.storyboard in Resources */,
@@ -147,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EA37CA2A8597A10069D223 /* TaskTableViewCell.swift in Sources */,
 				68903AD62A4256860083F2DE /* AppDelegate.swift in Sources */,
 				68903AD82A4256860083F2DE /* SceneDelegate.swift in Sources */,
 				68903AE02A4256860083F2DE /* SimpleToDoList.xcdatamodeld in Sources */,

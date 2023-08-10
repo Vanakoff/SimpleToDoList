@@ -16,8 +16,9 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        let nib = UINib(nibName: String(describing: TaskTableViewCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: String(describing: TaskTableViewCell.self))
         loadTasks()
     }
     
@@ -29,9 +30,13 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaskTableViewCell.self), for: indexPath) as! TaskTableViewCell
         
-        cell.textLabel?.text = taskArray[indexPath.row].name
+       // cell.textLabel?.text = taskArray[indexPath.row].name
+        
+        cell.taskCellLabel.text = taskArray[indexPath.row].name
+        
         return cell
     }
     
