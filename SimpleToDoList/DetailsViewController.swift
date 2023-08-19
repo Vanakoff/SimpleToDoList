@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
     
     var taskName: String?
     var taskDescription: String?
+    var navigationTitle: String?
     // var done: Bool?
     
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class DetailsViewController: UIViewController {
         
         taskNameLabel.text = taskName
         taskDescriptionLabel.text = taskDescription
-        
+        navigationItem.title = navigationTitle
     }
     
 }

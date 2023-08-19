@@ -17,6 +17,9 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        
+        tableView.separatorStyle = .none
+        
         let nib = UINib(nibName: String(describing: TaskTableViewCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: String(describing: TaskTableViewCell.self))
         loadTasks()
@@ -45,7 +48,9 @@ class TableViewController: UITableViewController {
         
         if let detailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
             
-            detailsVC.taskName = taskArray[indexPath.row].name
+            detailsVC.navigationTitle = taskArray[indexPath.row].name
+            
+          //  detailsVC.taskName = taskArray[indexPath.row].name
             detailsVC.taskDescription = taskArray[indexPath.row].taskDescription
             navigationController?.pushViewController(detailsVC, animated: true)
         }
@@ -114,7 +119,7 @@ class TableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             saveTask()
-        }
+        } 
     }
     
     
